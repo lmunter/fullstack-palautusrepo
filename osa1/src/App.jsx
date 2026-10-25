@@ -7,7 +7,6 @@ const Header = (props) => {
 }
 
 const Part = (props) => {
-  console.log(props)
   return (
     <div>
       <p>
@@ -18,15 +17,15 @@ const Part = (props) => {
 }
 
 const Content = (props) => {
-  props.parts.forEach(part => {
-    console.log(part.name)
-    console.log(part.exercises)
-    return (
-      <div>
-          <Part name = {part.name} exercises = {part.exercises}/>
-      </div>
-    )
-  })
+  return (
+    props.parts.map(part => {
+      return (
+        <div>
+          <Part name={part.name} exercises={part.exercises} />
+        </div>
+      )
+    })
+  )
 }
 
 const Total = (props) => {
