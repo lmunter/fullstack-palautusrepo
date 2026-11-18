@@ -23,21 +23,24 @@ const App = () => {
       <header>
         Statistics
       </header>
-      <div>
-        <p>
-          good {good}
-        </p>
-      </div>
-      <div>
-        <p>
-          neutral {neutral}
-        </p>
-      </div>
-      <div>
-        <p>
-          bad {bad}
-        </p>
-      </div>
+      <p>
+        good {good}
+      </p>
+      <p>
+        neutral {neutral}
+      </p>
+      <p>
+        bad {bad}
+      </p>
+      <p>
+        all {good + neutral + bad}
+      </p>
+      <p>
+        average {(good - bad) / (good + neutral + bad)}
+      </p>
+      <p>
+        positive {good / (good + neutral + bad) * 100}%
+      </p>
     </div>
   )
 }
