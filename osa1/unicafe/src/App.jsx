@@ -1,28 +1,38 @@
 import { useState } from 'react'
 
 const Statistics = (props) => {
-  return (
-    <div>
-      <p>
-        good {props.statistics[0]}
-      </p>
-      <p>
-        neutral {props.statistics[1]}
-      </p>
-      <p>
-        bad {props.statistics[2]}
-      </p>
-      <p>
-        all {props.statistics[0] + props.statistics[1] + props.statistics[2]}
-      </p>
-      <p>
-        average {(props.statistics[0] - props.statistics[2]) / (props.statistics[0] + props.statistics[1] + props.statistics[2])}
-      </p>
-      <p>
-        positive {props.statistics[0] / (props.statistics[0] + props.statistics[1] + props.statistics[2]) * 100}%
-      </p>
-    </div>
-  )
+  if (props.statistics[0] + props.statistics[1] + props.statistics[2] == 0) {
+    return (
+      <div>
+        <p>
+          No feedback given
+        </p>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <p>
+          good {props.statistics[0]}
+        </p>
+        <p>
+          neutral {props.statistics[1]}
+        </p>
+        <p>
+          bad {props.statistics[2]}
+        </p>
+        <p>
+          all {props.statistics[0] + props.statistics[1] + props.statistics[2]}
+        </p>
+        <p>
+          average {(props.statistics[0] - props.statistics[2]) / (props.statistics[0] + props.statistics[1] + props.statistics[2])}
+        </p>
+        <p>
+          positive {props.statistics[0] / (props.statistics[0] + props.statistics[1] + props.statistics[2]) * 100}%
+        </p>
+      </div>
+    )
+  }
 }
 
 const App = () => {
